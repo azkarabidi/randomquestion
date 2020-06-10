@@ -1,17 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+@extends('layouts.base')
+@section('body')
 <body>
-    <form method="POST" action="{{route('question.update',$question->id)}}">
-        {{ csrf_field() }}
-    <input type="text" name="question" value="{{$question->question}}" >
-        <input type="submit" value="update">
-    </form>
+    <div class="container">
+    <a href="{{route('question.list')}}">Table Question</a>
+        <div class="row my-4">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST" action="{{route('question.update',$question->id)}}">
+                            {{ csrf_field() }}
+                            <label>Update Question </label>
+                        <input type="text" name="question" class="form-control mx-2" value="{{$question->question}}" >
+                            <input type="submit" class="btn btn-primary float-right" value="update">
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     
 </body>
 </html>

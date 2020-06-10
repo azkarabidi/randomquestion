@@ -1,20 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css" integrity="sha256-2bAj1LMT7CXUYUwuEnqqooPb1W0Sw0uKMsqNH0HwMa4=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js" integrity="sha256-2RS1U6UNZdLS0Bc9z2vsvV4yLIbJNKxyA4mrx5uossk=" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
+@extends('layouts.base')
+@section('body')
+    
 <body>
-    <div>
-        Random
-        <input type="button"  value="random" id="random">
+    <div class="container ">
+    <a href="{{route('question.list')}}" class="float-right btn btn-primary"> Create Quaestion</a>
+    <div class="row justify-content-center my-5 mx-auto py-3">
+        <div class="col-md-8 text-center">
+            <h2>Generate Random Question</h2>
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card text-center mx2 my-2" >
+                <h2 class="card-header"> Click Button To Show Question</h2>
+                <div class="card-body mx-2 my-2">
+                    <input type="button"  class="btn btn-primary mx-2 my-5" value="Generate Random Question Base On Your List" id="random">
+                        
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+@section('script')
+    
+
+<script>
         $('#random').click(function(){
             // $.get("{{route('question')}}")
             // .done(function(data){
@@ -55,5 +66,6 @@ Swal.fire({
 })  
     
     </script>
-</body>
-</html>
+
+@endsection
+@endsection
