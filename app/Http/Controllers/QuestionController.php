@@ -27,6 +27,10 @@ class QuestionController extends Controller
         $questions=Question::all();
         return view('question.list',compact('questions'));
     }
+    public function  destroy(Question $question){
+        $question->delete();
+        return redirect()->route('question.list');
+    }
 
     public function questionrandom(){
         // $question =Question::all()->random();

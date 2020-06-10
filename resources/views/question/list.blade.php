@@ -39,6 +39,7 @@
                         </td>
                         <td>
                     <a href="{{route('question.edit',$item->id)}}" class="btn btn-success">edit</a>
+                    <a href="{{route('question.destroy',$item->id)}}" class="btn btn-danger">Delete</a>
                         </td>
                         
                     </tr>
