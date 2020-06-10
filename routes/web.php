@@ -19,4 +19,7 @@ Route::get('/', function () {
 
 Route::post('store/question','QuestionController@store')->name('question.add');
 Route::get('list/question','QuestionController@getall')->name('question.list');
-Route::get('random/question','QuestionController@questionrandom');
+Route::get('random/question','QuestionController@questionrandom')->name('question.random');
+Route::get('question','QuestionController@question')->name('question');
+Route::get('edit/{question}/question','QuestionController@edit')->name('question.edit');
+Route::post('update/{question}/question','QuestionController@update')->name('question.update');

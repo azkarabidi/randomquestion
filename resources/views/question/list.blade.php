@@ -23,8 +23,10 @@
                     {{$item->id}}
                 </td>
                 <td>
-                    {{$item->question}}
+                    {{$item->question}} 
+                <a href="{{route('question.edit',$item->id)}}">edit</a>
                 </td>
+                
             </tr>
         @empty
         <tr>

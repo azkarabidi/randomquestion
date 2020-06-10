@@ -18,13 +18,23 @@ class QuestionController extends Controller
     public function edit(Question $question){
         return view('question.edit',compact('question'));
     }
+    public function update(Request $request ,Question $question){
+        $question->question=$request->question;
+        $question->save();
+        return redirect()->route('question.list');
+    }
     public function  getall(){
         $questions=Question::all();
         return view('question.list',compact('questions'));
     }
 
     public function questionrandom(){
-        $question =Question::all()->random();
-        return $question;
+        // $question =Question::all()->random();
+        return view('question.random');
     }
+    public function question(){
+        $question =Question::all()->random();
+        return response()->json($question);
+    }
+
 }
